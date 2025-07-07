@@ -1,0 +1,82 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "a0da6cd3007440fc764c30f6c99649f7",
+    "entities": [
+      {
+        "tableName": "questions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `type` TEXT NOT NULL, `description` TEXT NOT NULL, `optionA` TEXT, `optionB` TEXT, `optionC` TEXT, `optionD` TEXT, `answer` TEXT NOT NULL, `explanation` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "optionA",
+            "columnName": "optionA",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "optionB",
+            "columnName": "optionB",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "optionC",
+            "columnName": "optionC",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "optionD",
+            "columnName": "optionD",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "answer",
+            "columnName": "answer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "explanation",
+            "columnName": "explanation",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a0da6cd3007440fc764c30f6c99649f7')"
+    ]
+  }
+}
